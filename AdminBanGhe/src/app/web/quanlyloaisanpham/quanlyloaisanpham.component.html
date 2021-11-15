@@ -1,0 +1,8 @@
+<h5>Basic</h5>
+<p-tree   [value]="files">
+    <ng-template let-node  pTemplate="default">
+       <a style="color: black; margin-right: 500px;" href="">{{node.label}}</a>
+       <button class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+       <button class="mb-2 mr-2 btn btn-danger" (click)="delete(node.key)">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+    </ng-template>
+</p-tree>
