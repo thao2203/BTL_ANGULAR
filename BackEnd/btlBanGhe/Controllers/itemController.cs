@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Model;
 namespace btlBanGhe.Controllers
 {
     [ApiController]
@@ -57,6 +57,14 @@ namespace btlBanGhe.Controllers
         public object getAllItems()
         {
             return _db.GetAllItems();
+        }
+
+        [HttpPost]
+        [Route("create-item")]
+
+        public object createItem(items data)
+        {
+            return _db.CreateItem(data);
         }
     }
 }

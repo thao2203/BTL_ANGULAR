@@ -11,6 +11,8 @@ import { QuanlyloaisanphamComponent } from './web/quanlyloaisanpham/quanlyloaisa
 import { QuanlysanphamComponent } from './web/quanlysanpham/quanlysanpham.component';
 import { QuanlynhacungcapComponent } from './web/quanlynhacungcap/quanlynhacungcap.component';
 import {TreeModule} from 'primeng/tree';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ThemsanphamComponent } from './web/themsanpham/themsanpham.component';
 
 
 @NgModule({
@@ -22,13 +24,16 @@ import {TreeModule} from 'primeng/tree';
     FooterComponent,
     QuanlyloaisanphamComponent,
     QuanlysanphamComponent,
-    QuanlynhacungcapComponent
+    QuanlynhacungcapComponent,
+    ThemsanphamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TreeModule
+    TreeModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

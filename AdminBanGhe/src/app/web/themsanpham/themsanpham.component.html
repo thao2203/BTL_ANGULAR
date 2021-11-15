@@ -1,0 +1,64 @@
+<div class="app-main__inner">
+    <div class="app-page-title"  style="margin: 0px; padding-bottom: 0px; padding-top: 0px;">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                
+                <div>THÊM SẢN PHẨM
+                </div>
+            </div>
+              
+         </div>
+    </div>        
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-card card">
+                        <div class="card-body">
+                            <h5 class="card-title">Thêm sản phẩm</h5>
+                            <form (submit)="submit()" [formGroup]="system.SaveForm" class="">
+                                <div class="position-relative form-group">
+                                    <label for="tensanpham" class="">Tên sản phẩm</label>
+                                    <input formControlName="tenSP" id="tensanpham" placeholder="Nhập tên sản phẩm..." type="text" class="form-control">
+                                    <p *ngIf="system.SaveForm.get('tenSP').touched && system.SaveForm.get('tenSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="giasanpham" class="">Giá</label>
+                                    <input formControlName="giaSP" id="giasanpham" placeholder="Nhập giá sản phẩm..." type="number" class="form-control">
+                                    <p *ngIf="system.SaveForm.get('giaSP').touched && system.SaveForm.get('giaSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="loaisanpham" class="">Loại sản phẩm</label>
+                                    <select formControlName="loaiSP" name="select" id="loaisanpham" class="form-control">
+                                        <option [ngValue]=1>1</option>
+                                    </select>
+                                    <p *ngIf="system.SaveForm.get('loaiSP').touched && system.SaveForm.get('loaiSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="nhacungcap" class="">Nhà cung cấp</label>
+                                    <select formControlName="nccSP" name="select1" id="nhacungcap" class="form-control">
+                                        <option [ngValue]=1>1</option>
+                                    </select>
+                                    <p *ngIf="system.SaveForm.get('nccSP').touched && system.SaveForm.get('nccSP').errors" class="text-danger">Vui lòng chọn hình ảnh!</p>
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="mota" class="">Mô tả</label>
+                                    <input formControlName="moTa" id="mota" class="form-control">
+                                   
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label for="exampleFile" class="">Hình ảnh</label>
+                                    <input formControlName="hinhAnh" id="exampleFile" type="file" class="form-control-file">
+                                    
+                                </div>
+                                <button [disabled]="!system.SaveForm.valid" type="submit" class="mt-1 btn btn-primary">Hoàn thành</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>

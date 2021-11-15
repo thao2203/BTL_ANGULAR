@@ -64,5 +64,14 @@ namespace DAL
                 return Error;
             return db1.ConvertTo<items>().ToList();
         }
+
+        public object CreateItem(items data)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "sp_item_create", "@ITEM_GROUP_ID", data.ITEM_GROUP_ID, "@SUPPLIER_ID", data.SUPPLIER_ID, "@ITEM_IMAGE", data.ITEM_IMAGE, "@ITEM_NAME", data.ITEM_NAME, "@ITEM_PRICE", data.ITEM_PRICE, "@ITEM_DESCRIPTION", data.ITEM_DESCRIPTION);
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return data;
+        }
     }
 }
