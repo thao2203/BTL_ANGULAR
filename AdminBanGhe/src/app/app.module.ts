@@ -13,6 +13,7 @@ import { QuanlynhacungcapComponent } from './web/quanlynhacungcap/quanlynhacungc
 import {TreeModule} from 'primeng/tree';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ThemsanphamComponent } from './web/themsanpham/themsanpham.component';
+import { ThemnhacungcapComponent } from './web/themnhacungcap/themnhacungcap.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ThemsanphamComponent } from './web/themsanpham/themsanpham.component';
     QuanlyloaisanphamComponent,
     QuanlysanphamComponent,
     QuanlynhacungcapComponent,
-    ThemsanphamComponent
+    ThemsanphamComponent,
+    ThemnhacungcapComponent
   ],
   imports: [
     BrowserModule,

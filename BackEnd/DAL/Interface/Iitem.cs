@@ -8,10 +8,12 @@ namespace DAL.Interface
     {
         public object ngauNhien();
         public object chiTiet(int id);
+        public object sanPhamTuongTu(int id);
         public object DSdanhMuc(int id);
-        public object TatCaNCC();
+        
         public object GetAllItems();
 
         public object CreateItem(items data);
+        public object DelItemByID(string id);
     }
 }

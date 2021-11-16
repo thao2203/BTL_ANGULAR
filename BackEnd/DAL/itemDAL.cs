@@ -35,6 +35,15 @@ namespace DAL
 
         }
 
+        public object sanPhamTuongTu(int id)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "sp_item_tuongTu_by_ID", "@ITEM_GROUP_ID", id);
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return db1.ConvertTo<items>().FirstOrDefault();
+        }
+
         public object DSdanhMuc(int id)
         {
             string Error = "";
@@ -45,17 +54,6 @@ namespace DAL
 
         }
         
-
-        public object TatCaNCC()
-        {
-            string Error = "";
-            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "supplier_all");
-            if (!string.IsNullOrEmpty(Error))
-                return Error;
-          return db1.ConvertTo<supplier>().ToList();
-
-        }
-
         public object GetAllItems()
         {
             string Error = "";
@@ -72,6 +70,14 @@ namespace DAL
             if (!string.IsNullOrEmpty(Error))
                 return Error;
             return data;
+        }
+        public object DelItemByID(string id)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedure("sp_item_del", "@ITEM_ID", id);
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return null;
         }
     }
 }

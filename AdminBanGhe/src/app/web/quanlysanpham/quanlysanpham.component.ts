@@ -23,6 +23,15 @@ export class QuanlysanphamComponent implements OnInit {
         console.log(rep1)
       }
     )
+    
+  }
+  delete(s) {
+    this.system.delItemID(s).subscribe((rep:any)=>{
+      location.reload();
+    }, (rep1: any)=>{
+      console.log(rep1);
+    }
+    )
   }
 
 }

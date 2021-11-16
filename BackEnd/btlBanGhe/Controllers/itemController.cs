@@ -34,22 +34,20 @@ namespace btlBanGhe.Controllers
         }
 
         [HttpGet]
+        [Route("get-spTuongTu/{id}")]
+
+        public object getSPTuongTu(int id)
+        {
+            return _db.sanPhamTuongTu(id);
+        }
+
+        [HttpGet]
         [Route("get-category/{id}")]
 
         public object getCategory(int id)
         {
             return _db.DSdanhMuc(id);
         }
-
-        [HttpGet]
-        [Route("get-allSupplier")]
-
-        public object getAllSupplier()
-        {
-            return _db.TatCaNCC();
-        }
-
-
 
         [HttpGet]
         [Route("get-allItem")]
@@ -65,6 +63,13 @@ namespace btlBanGhe.Controllers
         public object createItem(items data)
         {
             return _db.CreateItem(data);
+        }
+
+        [HttpGet]
+        [Route("delItem/{id}")]
+        public object DelItemByID(string id)
+        {
+            return _db.DelItemByID(id);
         }
     }
 }

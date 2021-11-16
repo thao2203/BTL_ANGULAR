@@ -15,16 +15,15 @@
                 <div class="col-md-12">
                     <div class="main-card card">
                         <div class="card-body">
-                            <h5 class="card-title">Thêm sản phẩm</h5>
                             <form (submit)="submit()" [formGroup]="system.SaveForm" class="">
                                 <div class="position-relative form-group">
                                     <label for="tensanpham" class="">Tên sản phẩm</label>
                                     <input formControlName="tenSP" id="tensanpham" placeholder="Nhập tên sản phẩm..." type="text" class="form-control">
-                                    <p *ngIf="system.SaveForm.get('tenSP').touched && system.SaveForm.get('tenSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
+                                    <p *ngIf="system.SaveForm.get('tenSP').touched && system.SaveForm.get('tenSP').errors" class="text-danger">Vui lòng không để trông và nhập > 8 ký tự!</p>
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="giasanpham" class="">Giá</label>
-                                    <input formControlName="giaSP" id="giasanpham" placeholder="Nhập giá sản phẩm..." type="number" class="form-control">
+                                    <input style="color: rgba(255, 0, 0, 0.904);" formControlName="giaSP" id="giasanpham" placeholder="Nhập giá sản phẩm..." type="number" class="form-control">
                                     <p *ngIf="system.SaveForm.get('giaSP').touched && system.SaveForm.get('giaSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
                                 </div>
                                 <div class="position-relative form-group">
@@ -32,14 +31,14 @@
                                     <select formControlName="loaiSP" name="select" id="loaisanpham" class="form-control">
                                         <option [ngValue]=1>1</option>
                                     </select>
-                                    <p *ngIf="system.SaveForm.get('loaiSP').touched && system.SaveForm.get('loaiSP').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
+                                    <p *ngIf="system.SaveForm.get('loaiSP').touched && system.SaveForm.get('loaiSP').errors" class="text-danger">Vui lòng chọn thông tin!</p>
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="nhacungcap" class="">Nhà cung cấp</label>
                                     <select formControlName="nccSP" name="select1" id="nhacungcap" class="form-control">
                                         <option [ngValue]=1>1</option>
                                     </select>
-                                    <p *ngIf="system.SaveForm.get('nccSP').touched && system.SaveForm.get('nccSP').errors" class="text-danger">Vui lòng chọn hình ảnh!</p>
+                                    <p *ngIf="system.SaveForm.get('nccSP').touched && system.SaveForm.get('nccSP').errors" class="text-danger">Vui lòng chọn thông tin!</p>
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="mota" class="">Mô tả</label>

@@ -21,5 +21,12 @@ export class QuanlynhacungcapComponent implements OnInit {
       }
     )
   }
-
+  delete(s) {
+    this.system.delSupplierID(s).subscribe((rep:any)=>{
+      location.reload();
+    }, (rep1: any)=>{
+      console.log(rep1);
+    }
+    )
+  }
 }

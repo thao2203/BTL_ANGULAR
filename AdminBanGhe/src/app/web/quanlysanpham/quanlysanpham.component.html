@@ -29,12 +29,11 @@
                 <td>{{a+1}}</td>
                 <td>{{i.iteM_NAME}}</td>
                 <td>{{i.iteM_IMAGE}}</td>
-                <td>{{i.iteM_PRICE}}</td>
-                <td>{{i.iteM_DESCRIPTION.substring(0,30)}}...</td>
+                <td style="color: rgba(255, 0, 0, 0.904);">{{i.iteM_PRICE | currency: "VND"}}</td>
+                <td>{{i.iteM_DESCRIPTION.substring(0,80)}}...</td>
                 <td>
-                    
                     <button class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
-                    <button class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button (click)="delete(i.iteM_ID)" class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
                 </td>
             </tr>
             

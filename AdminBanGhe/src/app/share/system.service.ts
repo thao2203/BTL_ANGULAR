@@ -24,7 +24,7 @@ export class SystemService {
     return this.http.get(this.host+"itemGroup/get-allItemGroup", {responseType:"json"})
   }
   getSupplier(){
-    return this.http.get(this.host+"item/get-allSupplier", {responseType:"json"})
+    return this.http.get(this.host+"supplier/get-allSupplier", {responseType:"json"})
   }
   delItemGroupID(id){
     return this.http.get(this.host+"itemGroup/delItemGroup/"+id, {responseType:"json"})
@@ -40,5 +40,11 @@ export class SystemService {
     };
     console.log(data);
     return this.http.post(this.host+"item/create-item",data, {responseType:"json"})
+  }
+  delItemID(id){
+    return this.http.get(this.host+"item/delItem/"+id, {responseType:"json"})
+  }
+  delSupplierID(id){
+    return this.http.get(this.host+"supplier/delSupplier/"+id, {responseType:"json"})
   }
 }
