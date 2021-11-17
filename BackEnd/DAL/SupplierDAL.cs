@@ -23,6 +23,14 @@ namespace DAL
             return db1.ConvertTo<supplier>().ToList();
 
         }
+        public object CreateSupplier(supplier data)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "supplier_create", "@SUPPLIER_NAME", data.SUPPLIER_NAME, "@SUPPLIER_ADDRESS", data.SUPPLIER_ADDRESS, "@SUPPLIER_PHONE", data.SUPPLIER_PHONE);
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return data;
+        }
         public object DelSupplierByID(string id)
         {
             string Error = "";

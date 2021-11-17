@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DAL.Interface;
 using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace btlBanGhe.Controllers
         public object getAllSupplier()
         {
             return _db.TatCaNCC();
+        }
+        [HttpPost]
+        [Route("create-supplier")]
+
+        public object createItem(supplier data)
+        {
+            return _db.CreateSupplier(data);
         }
         [HttpGet]
         [Route("delSupplier/{id}")]

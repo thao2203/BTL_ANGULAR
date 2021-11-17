@@ -16,6 +16,12 @@ export class SystemService {
     loaiSP: ["",[Validators.required]],
     nccSP: ["",[Validators.required]]
   });
+
+  public SaveFormSupplier = this.form.group({
+    tenNCC : ["",[Validators.required, Validators.minLength(8)]],
+    diaChi : ["",[Validators.required, Validators.min(0), Validators.max(900000)]],
+    SDT : ["",[Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
+  });
   constructor(private http: HttpClient, private form: FormBuilder) { }
   getAllItems(){
     return this.http.get(this.host+"item/get-AllItem", {responseType:"json"})
@@ -40,6 +46,15 @@ export class SystemService {
     };
     console.log(data);
     return this.http.post(this.host+"item/create-item",data, {responseType:"json"})
+  }
+  createSupplier(){
+    var data={
+      SUPPLIER_NAME: this.SaveFormSupplier.value.tenNCC,
+      SUPPLIER_ADDRESS: this.SaveFormSupplier.value.diaChi,
+      SUPPLIER_PHONE: this.SaveFormSupplier.value.SDT
+    };
+    console.log(data);
+    return this.http.post(this.host+"supplier/create-supplier",data, {responseType:"json"})
   }
   delItemID(id){
     return this.http.get(this.host+"item/delItem/"+id, {responseType:"json"})
