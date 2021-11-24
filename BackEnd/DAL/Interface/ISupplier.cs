@@ -5,11 +5,12 @@ using Model;
 
 namespace DAL.Interface
 {
-    public interface ISupplier
+    public interface Isupplier
     {
         public object TatCaNCC();
         public object CreateSupplier(supplier data);
         public object DelSupplierByID(string id);
+        public object SupplierTK();
     }
 }
 

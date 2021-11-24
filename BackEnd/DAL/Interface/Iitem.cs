@@ -15,5 +15,6 @@ namespace DAL.Interface
 
         public object CreateItem(items data);
         public object DelItemByID(string id);
+        public object ItemTK();
     }
 }

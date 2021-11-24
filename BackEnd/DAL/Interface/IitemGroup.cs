@@ -8,5 +8,6 @@ namespace DAL.Interface
     {
         public object GetAllItemGroup();
         public object DelItemGroupByID(string id);
+        public object ItemGroupTK();
     }
 }

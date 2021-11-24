@@ -13,8 +13,8 @@ namespace btlBanGhe.Controllers
     [Route("[controller]")]
     public class supplierController : ControllerBase
     {
-        private ISupplier _db;
-        public supplierController(ISupplier db)
+        private Isupplier _db;
+        public supplierController(Isupplier db)
         {
             _db = db;
         }
@@ -24,6 +24,13 @@ namespace btlBanGhe.Controllers
         public object getAllSupplier()
         {
             return _db.TatCaNCC();
+        }
+        [HttpGet]
+        [Route("supplier-TK")]
+
+        public object supplierTK()
+        {
+            return _db.SupplierTK();
         }
         [HttpPost]
         [Route("create-supplier")]

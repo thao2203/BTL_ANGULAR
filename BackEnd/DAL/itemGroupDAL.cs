@@ -32,5 +32,14 @@ namespace DAL
                 return Error;
             return null;
         }
+
+        public object ItemGroupTK()
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "itemGroup_thongke");
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return db1.ConvertTo<itemGroup>().FirstOrDefault();
+        }
     }
 }

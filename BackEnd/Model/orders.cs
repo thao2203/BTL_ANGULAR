@@ -13,5 +13,6 @@ namespace Model
 
         public string PHONE { get; set; }
         public string ADDRESS { get; set; }
+        public string NOTE { get; set; }
     }
 }

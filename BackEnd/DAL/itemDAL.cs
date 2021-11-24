@@ -25,6 +25,15 @@ namespace DAL
             
         }
 
+        public object ItemTK()
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "item_thongke");
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return db1.ConvertTo<items>().FirstOrDefault();
+        }
+
         public object chiTiet(int id)
         {
             string Error = "";
@@ -79,5 +88,7 @@ namespace DAL
                 return Error;
             return null;
         }
+
+        
     }
 }

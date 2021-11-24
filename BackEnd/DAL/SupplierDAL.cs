@@ -7,7 +7,7 @@ using DAL.Interface;
 
 namespace DAL
 {
-    public class SupplierDAL : ISupplier
+    public class SupplierDAL : Isupplier
     {
         private IDatabaseHelper _dbHelper;
         public SupplierDAL(IDatabaseHelper dbHelper)
@@ -38,6 +38,14 @@ namespace DAL
             if (!string.IsNullOrEmpty(Error))
                 return Error;
             return null;
+        }
+        public object SupplierTK()
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "Supplier_thongke");
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return db1.ConvertTo<supplier>().FirstOrDefault();
         }
     }
 }

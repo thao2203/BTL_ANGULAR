@@ -25,6 +25,14 @@ namespace btlBanGhe.Controllers
         }
 
         [HttpGet]
+        [Route("itemGroup-TK")]
+
+        public object itemGroupTK()
+        {
+            return _db.ItemGroupTK();
+        }
+
+        [HttpGet]
         [Route("delItemGroup/{id}")]
         public object DelItemGroupByID(string id)
         {

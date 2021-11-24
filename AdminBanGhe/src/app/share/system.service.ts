@@ -62,4 +62,16 @@ export class SystemService {
   delSupplierID(id){
     return this.http.get(this.host+"supplier/delSupplier/"+id, {responseType:"json"})
   }
+  TkItem()
+  {
+    return this.http.get(this.host+"item/item-TK", {responseType:"json"})
+  }
+  TkItemGroup()
+  {
+    return this.http.get(this.host+"itemGroup/itemGroup-TK", {responseType:"json"})
+  }
+  TkSupplier()
+  {
+    return this.http.get(this.host+"supplier/supplier-TK", {responseType:"json"})
+  }
 }
