@@ -85,5 +85,12 @@ namespace btlBanGhe.Controllers
         {
             return _db.DelItemByID(id);
         }
+
+        [HttpPut]
+        [Route("updateItem/{id}")]
+        public object UpdateById(string id)
+        {
+            return _db.UpdateItemByID(id);
+        }
     }
 }

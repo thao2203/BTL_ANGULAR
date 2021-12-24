@@ -44,6 +44,7 @@ namespace btlBanGhe
             services.AddTransient<DAL.Interface.IitemGroup, DAL.itemGroupDAL>();
             services.AddTransient<DAL.Interface.Isupplier, DAL.SupplierDAL>();
             services.AddTransient<DAL.Interface.Iorders, DAL.ordersDAL>();
+            services.AddTransient<DAL.Interface.IorderDetail, DAL.OrderDetailDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

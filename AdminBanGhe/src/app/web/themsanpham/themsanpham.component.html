@@ -29,14 +29,17 @@
                                 <div class="position-relative form-group">
                                     <label for="loaisanpham" class="">Loại sản phẩm</label>
                                     <select formControlName="loaiSP" name="select" id="loaisanpham" class="form-control">
-                                        <option [ngValue]=1>1</option>
+                                        <option [selected]="true">Chọn loại sản phẩm</option>
+                                        <option [ngValue]="i.key" *ngFor="let i of categories">
+                                           {{i.label}}
+                                        </option>
                                     </select>
                                     <p *ngIf="system.SaveForm.get('loaiSP').touched && system.SaveForm.get('loaiSP').errors" class="text-danger">Vui lòng chọn thông tin!</p>
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="nhacungcap" class="">Nhà cung cấp</label>
                                     <select formControlName="nccSP" name="select1" id="nhacungcap" class="form-control">
-                                        <option [ngValue]=1>1</option>
+                                        <option [ngValue]="s.supplieR_ID" *ngFor="let s of suppliers">{{s.supplieR_NAME}}</option>
                                     </select>
                                     <p *ngIf="system.SaveForm.get('nccSP').touched && system.SaveForm.get('nccSP').errors" class="text-danger">Vui lòng chọn thông tin!</p>
                                 </div>

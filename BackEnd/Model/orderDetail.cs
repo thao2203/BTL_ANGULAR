@@ -13,5 +13,6 @@ namespace Model
 		public float PRICE { get; set; }
 		public string IMAGE { get; set; }
 		public float TOTAL { get; set; }
+		public int item_group_count { get; set; }
 	}
 }

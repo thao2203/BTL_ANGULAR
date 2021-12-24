@@ -41,5 +41,14 @@ namespace DAL
                 return Error;
             return db1.ConvertTo<itemGroup>().FirstOrDefault();
         }
+
+        public object CreateItemGroup(itemGroup data)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "sp_item_group_create", "@PARENT_ITEM_GROUP_ID", data.PARENT_ITEM_GROUP_ID, "@ITEM_GROUP_NAME", data.label, "@ITEM_IMAGE");
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return data;
+        }
     }
 }

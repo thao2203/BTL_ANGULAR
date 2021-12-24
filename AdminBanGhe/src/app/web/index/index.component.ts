@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
   item;
   itemGroup;
   supplier;
+  order;
   ngOnInit(): void {
     this.system.TkItem().subscribe(
       (rep:any)=>
@@ -36,6 +37,16 @@ export class IndexComponent implements OnInit {
       (rep:any)=>
       {
         this.supplier = rep;
+        console.log(rep)
+      },(rep1:any)=>
+      {
+        console.log(rep1)
+      }
+    )
+    this.system.TkOrder().subscribe(
+      (rep:any)=>
+      {
+        this.order = rep;
         console.log(rep)
       },(rep1:any)=>
       {

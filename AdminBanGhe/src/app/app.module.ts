@@ -15,6 +15,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ThemsanphamComponent } from './web/themsanpham/themsanpham.component';
 import { ThemnhacungcapComponent } from './web/themnhacungcap/themnhacungcap.component';
 import { QuanlydonhangComponent } from './web/quanlydonhang/quanlydonhang.component';
+import { ThemloaisanphamComponent } from './web/themloaisanpham/themloaisanpham.component';
+import { SuasanphamComponent } from './web/suasanpham/suasanpham.component';
+import { XemdonhangComponent } from './web/xemdonhang/xemdonhang.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { QuanlydonhangComponent } from './web/quanlydonhang/quanlydonhang.compon
     QuanlynhacungcapComponent,
     ThemsanphamComponent,
     ThemnhacungcapComponent,
-    QuanlydonhangComponent
+    QuanlydonhangComponent,
+    ThemloaisanphamComponent,
+    SuasanphamComponent,
+    XemdonhangComponent
   ],
   imports: [
     BrowserModule,

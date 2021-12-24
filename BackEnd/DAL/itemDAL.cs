@@ -50,7 +50,7 @@ namespace DAL
             var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "sp_item_tuongTu_by_ID", "@ITEM_GROUP_ID", id);
             if (!string.IsNullOrEmpty(Error))
                 return Error;
-            return db1.ConvertTo<items>().FirstOrDefault();
+            return db1.ConvertTo<items>().ToList();
         }
 
         public object DSdanhMuc(int id)
@@ -89,6 +89,13 @@ namespace DAL
             return null;
         }
 
-        
+        public object UpdateItemByID(string id)
+        {
+            string Error = "";
+            var db1 = _dbHelper.ExecuteSProcedure("sp_item_update", "@ITEM_ID", id);
+            if (!string.IsNullOrEmpty(Error))
+                return Error;
+            return null;
+        }
     }
 }

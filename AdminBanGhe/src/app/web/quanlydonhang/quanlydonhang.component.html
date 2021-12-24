@@ -18,41 +18,31 @@
                 <th>STT</th>
                 <th>Chủ đơn hàng</th>
                 <th>Địa chỉ</th>
-                <th>Số điện thoại</th>
+                <th>Thời gian</th>
+                <th>Địa chỉ</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor="let od of orders; let a= index">
+                <td>{{a+1}}</td>
+                <td>{{od.ordeR_NAME}}</td>
+                <td>{{od.address}}</td>
+                <td>{{od.createD_DATE| date:'dd-MM-YYYY'}}</td>
+                <td>{{od.phone}}</td>
                 <td>
-                    <div class="default-select" id="default-select_2">
-                        <select style="display: none;">
-                            <option value="0">Đơn hàng chưa xác thực</option>
-                            <option value="1">Đơn hàng đã xác thực</option>
-                            <option value="2">Đơn hàng đã giao</option>
-                            <option value="3">Đơn hàng đã thanh toán</option>
-                        </select>
-                            <div class="nice-select" tabindex="0">
-                                <span class="current">English</span>
-                                <ul class="list">
-                                    <li data-value="1" class="option selected">English</li>
-                                    <li data-value="1" class="option">Spanish</li>
-                                    <li data-value="1" class="option">Arabic</li>
-                                    <li data-value="1" class="option">Portuguise</li>
-                                    <li data-value="1" class="option">Bengali</li>
-                                </ul>
-                            </div>
-                    </div>
+                    <select>
+                        <option value="1">Đơn hàng chưa xác thực</option>
+                        <option value="2">Đơn hàng đã xác thực</option>
+                        <option value="3">Đơn hàng đã giao</option>
+                        <option value="4">Đơn hàng đã thanh toán</option>
+                    </select>   
                 </td>
                 <td>
-                    <button class="mb-2 mr-2 btn btn-default">Xem<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
-                    <button class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
-                    <button class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button class="mb-2 mr-2 btn btn-success"><a style="color: white!important; text-decoration: none!important;" href="xemdonhang/{{od.ordeR_ID}}">Xem</a><span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button style="color: white;" class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button style="color: white;" class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
                 </td>
             </tr>
             
@@ -62,6 +52,7 @@
                 <th>STT</th>
                 <th>Chủ đơn hàng</th>
                 <th>Địa chỉ</th>
+                <th>Thời gian</th>
                 <th>Số điện thoại</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>

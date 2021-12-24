@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="position-relative form-group">
                                     <label for="sodienthoai" class="">Số điện thoại</label>
-                                    <input style="color: rgba(255, 0, 0, 0.904);" formControlName="SDT" id="sodienthoai" placeholder="Nhập giá sản phẩm..." type="text" class="form-control">
+                                    <input style="color: rgba(255, 0, 0, 0.904);" formControlName="SDT" id="sodienthoai" placeholder="Nhập số điện thoại..." type="text" class="form-control">
                                     <p *ngIf="system.SaveFormSupplier.get('SDT').touched && system.SaveFormSupplier.get('SDT').errors" class="text-danger">Vui lòng nhập chính xác thông tin!</p>
                                 </div>
                                 <button [disabled]="!system.SaveFormSupplier.valid" type="submit" class="mt-1 btn btn-primary">Hoàn thành</button>

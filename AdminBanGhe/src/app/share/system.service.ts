@@ -10,11 +10,16 @@ export class SystemService {
   private host = environment.hiiii;
   public SaveForm = this.form.group({
     tenSP : ["",[Validators.required, Validators.minLength(8)]],
-    giaSP : ["",[Validators.required, Validators.min(0), Validators.max(900000)]],
+    giaSP : ["",[Validators.required, Validators.min(0), Validators.max(9000000)]],
     hinhAnh : [""],
     moTa : [""],
     loaiSP: ["",[Validators.required]],
     nccSP: ["",[Validators.required]]
+  });
+
+  public SaveFormCategory = this.form.group({
+    tenLSP : ["",[Validators.required, Validators.minLength(8)]],
+    loaiSPCha: ["",[Validators.required]]
   });
 
   public SaveFormSupplier = this.form.group({
@@ -47,6 +52,15 @@ export class SystemService {
     console.log(data);
     return this.http.post(this.host+"item/create-item",data, {responseType:"json"})
   }
+
+  createCategory(){
+    var data={
+      PARENT_ITEM_GROUP_ID: this.SaveFormCategory.value.loaiSPCha,
+      label: this.SaveFormCategory.value.tenLSP
+    };
+    console.log(data);
+    return this.http.post(this.host+"itemGroup/create-item-group",data, {responseType:"json"})
+  }
   createSupplier(){
     var data={
       SUPPLIER_NAME: this.SaveFormSupplier.value.tenNCC,
@@ -73,5 +87,20 @@ export class SystemService {
   TkSupplier()
   {
     return this.http.get(this.host+"supplier/supplier-TK", {responseType:"json"})
+  }
+
+  TkOrder()
+  {
+    return this.http.get(this.host+"Orders/order-TK", {responseType:"json"})
+  }
+
+  getOrderStatus(status){
+    return this.http.get(this.host+"Orders/get-orderByStatus/"+status, {responseType:"json"})
+  }
+  getOrder(id){
+    return this.http.get(this.host+"Orders/get-orderByID/"+id, {responseType:"json"})
+  }
+  getOrderDetail(id){
+    return this.http.get(this.host+"Orders/get-orderDetailByID/"+id, {responseType:"json"})
   }
 }

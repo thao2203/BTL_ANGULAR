@@ -9,7 +9,7 @@
             <div class="page-title-actions">
                 <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom"
                     class="btn-shadow mr-3 btn btn-dark">
-                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star">{{item.item_count}}</i>
                 </button>
                 
             </div>    
@@ -21,7 +21,7 @@
         
         <div class="row">
             <div class="col-md-6 col-xl-3">
-                <div
+                <div style="width: 230px; height: 310px;"
                     class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-success border-success">
                     <div class="widget-chat-wrapper-outer">
                         <div *ngIf="item" class="widget-chart-content pt-3 pl-3 pb-1">
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="widget-subheading mb-0 opacity-5">SẢN PHẨM</h1>
+                            <h3 class="widget-subheading mb-0 opacity-5">SẢN PHẨM</h3>
                         </div>
                         <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
                             <div class="col-md-9">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
-                <div
+                <div style="width: 230px; height: 310px;"
                     class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-primary border-primary">
                     <div class="widget-chat-wrapper-outer">
                         <div class="widget-chart-content pt-3 pl-3 pb-1">
@@ -54,13 +54,13 @@
                                 <div class="widget-numbers">
                                     <div class="widget-chart-flex">
                                         <div class="fsize-4">
-                                            <small class="opacity-5">$</small>
-                                            <span>1283</span>
+                                            <small class="opacity-5">Tổng số: </small>
+                                            <span>{{itemGroup.item_group_count}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h6 class="widget-subheading mb-0 opacity-5">sales Income</h6>
+                            <h3 class="widget-subheading mb-0 opacity-5">LOẠI SẢN PHẨM</h3>
                         </div>
                         <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
                             <div class="col-md-9">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
-                <div
+                <div style="width: 230px; height: 310px;"
                     class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-warning border-warning">
                     <div class="widget-chat-wrapper-outer">
                         <div class="widget-chart-content pt-3 pl-3 pb-1">
@@ -79,13 +79,13 @@
                                 <div class="widget-numbers">
                                     <div class="widget-chart-flex">
                                         <div class="fsize-4">
-                                            <small class="opacity-5">$</small>
-                                            <span>1286</span>
+                                            <small class="opacity-5">Tổng số: </small>
+                                            <span>{{supplier.supplier_count}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h6 class="widget-subheading mb-0 opacity-5">last month sales</h6>
+                            <h3 class="widget-subheading mb-0 opacity-5">NHÀ CUNG CẤP</h3>
                         </div>
                         <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
                             <div class="col-md-9">
@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
-                <div
+                <div style="width: 230px; height: 310px;"
                     class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-danger border-danger">
                     <div class="widget-chat-wrapper-outer">
                         <div class="widget-chart-content pt-3 pl-3 pb-1">
@@ -104,13 +104,13 @@
                                 <div class="widget-numbers">
                                     <div class="widget-chart-flex">
                                         <div class="fsize-4">
-                                            <small class="opacity-5">$</small>
-                                            <span>564</span>
+                                            <small class="opacity-5">Tổng số: </small>
+                                            <span>{{order.order_count}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h6 class="widget-subheading mb-0 opacity-5">total revenue</h6>
+                            <h3 class="widget-subheading mb-0 opacity-5">ĐƠN HÀNG</h3>
                         </div>
                         <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
                             <div class="col-md-9">

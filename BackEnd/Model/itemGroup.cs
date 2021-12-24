@@ -8,6 +8,7 @@ namespace Model
 
         public int PARENT_ITEM_GROUP_ID { get; set; }
         public string label { get; set; }
+        public int item_group_count { get; set; }
 
     }
 }

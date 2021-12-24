@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model;
 
 namespace DAL.Interface
 {
@@ -9,5 +10,7 @@ namespace DAL.Interface
         public object GetAllItemGroup();
         public object DelItemGroupByID(string id);
         public object ItemGroupTK();
+        public object CreateItemGroup(itemGroup data);
+        
     }
 }

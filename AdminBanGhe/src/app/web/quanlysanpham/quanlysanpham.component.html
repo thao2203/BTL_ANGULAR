@@ -28,7 +28,7 @@
             <tr *ngFor="let i of items; let a= index">
                 <td>{{a+1}}</td>
                 <td>{{i.iteM_NAME}}</td>
-                <td>{{i.iteM_IMAGE}}</td>
+                <td><img style="width: 100px; height: 150px" src="{{i.iteM_IMAGE}}" alt=""></td>
                 <td style="color: rgba(255, 0, 0, 0.904);">{{i.iteM_PRICE | currency: "VND"}}</td>
                 <td>{{i.iteM_DESCRIPTION.substring(0,80)}}...</td>
                 <td>

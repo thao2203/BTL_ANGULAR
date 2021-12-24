@@ -33,7 +33,63 @@ namespace btlBanGhe.Controllers
             List<orderDetail> listDetails = JsonConvert.DeserializeObject<List<orderDetail>>(cartData.ToString());
             //_IBillBUS.CreateBill(bill);
 
-            _db.CheckOut(order, cartData);
+            _db.CheckOut(order, listDetails);
+        }
+
+        [HttpPost]
+        [Route("create-order")]
+
+        public object createOrder(orders data)
+        {
+            return _db.CreateOrder(data);
+        }
+
+        [HttpGet]
+        [Route("get-orderByCookie/{cookie}")]
+
+        public object getOrderCookie(string cookie)
+        {
+            return _db.getOrderByCookie(cookie);
+        }
+
+        [HttpGet]
+        [Route("get-orderByStatus/{status}")]
+
+        public object getOrderStatus(int status)
+        {
+            return _db.OrderByStatus(status);
+        }
+
+        [HttpGet]
+        [Route("get-orderDetailByID/{id}")]
+
+        public object getOrderDetailByID(int id)
+        {
+            return _db.OrderDetailByID(id);
+        }
+
+        [HttpGet]
+        [Route("get-orderByID/{id}")]
+
+        public object getDetailByID(int id)
+        {
+            return _db.OrderByID(id);
+        }
+
+        [HttpGet]
+        [Route("order-TK")]
+
+        public object orderTK()
+        {
+            return _db.OrderTK();
+        }
+
+        [HttpPost]
+        [Route("update-orderStatus/{id}")]
+
+        public object updateOrderStatus(int id)
+        {
+            return _db.UpdateStatus(id);
         }
     }
 }

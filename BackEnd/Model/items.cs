@@ -11,7 +11,8 @@ namespace Model
 
         public int ITEM_GROUP_ID { get; set; }
         public int SUPPLIER_ID { get; set; }
-
+        public int key { get; set; }
+        public int item_count { get; set; }
         public string label { get; set; }
         public string SUPPLIER_NAME { get; set; }
 

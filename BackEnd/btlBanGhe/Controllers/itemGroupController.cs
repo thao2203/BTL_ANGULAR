@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Model;
 
 namespace btlBanGhe.Controllers
 {
@@ -37,6 +38,14 @@ namespace btlBanGhe.Controllers
         public object DelItemGroupByID(string id)
         {
             return _db.DelItemGroupByID(id);
+        }
+
+        [HttpPost]
+        [Route("create-item-group")]
+
+        public object createItemGroup(itemGroup data)
+        {
+            return _db.CreateItemGroup(data);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Model
         public string SUPPLIER_NAME { get; set; }
         public string SUPPLIER_ADDRESS { get; set; }
         public string SUPPLIER_PHONE { get; set; }
+        public int supplier_count { get; set; }
     }
 }

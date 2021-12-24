@@ -10,10 +10,10 @@ namespace DAL.Interface
         public object chiTiet(int id);
         public object sanPhamTuongTu(int id);
         public object DSdanhMuc(int id);
-        
+        public object UpdateItemByID(string id);
         public object GetAllItems();
-
         public object CreateItem(items data);
+
         public object DelItemByID(string id);
         public object ItemTK();
     }
