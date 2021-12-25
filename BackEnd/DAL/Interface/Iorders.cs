@@ -15,6 +15,6 @@ namespace DAL.Interface
         public object OrderByID(int id);
         public object OrderByStatus(int status);
         public object OrderTK();
-        public object UpdateStatus(int id);
+        public object UpdateStatus(int id, int status);
     }
 }

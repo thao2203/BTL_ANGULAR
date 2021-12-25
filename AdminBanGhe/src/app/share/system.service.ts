@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
@@ -102,5 +103,14 @@ export class SystemService {
   }
   getOrderDetail(id){
     return this.http.get(this.host+"Orders/get-orderDetailByID/"+id, {responseType:"json"})
+  }
+  updateStatus(id, status){
+    const headers = new HttpHeaders()
+    .append('Content-Type', 'application/json')
+    .append('Access-Control-Allow-Origin', 'https://localhost:44378')
+    .append('X-Requested-With', 'XMLHttpRequest')
+    .append('MyClientCert', '')
+    .append('MyToken', '')
+    return this.http.post(this.host+"Orders/update-orderStatus/"+id+"/"+status, {headers})
   }
 }

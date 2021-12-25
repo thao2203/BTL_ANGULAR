@@ -85,11 +85,11 @@ namespace btlBanGhe.Controllers
         }
 
         [HttpPost]
-        [Route("update-orderStatus/{id}")]
+        [Route("update-orderStatus/{id}/{status}")]
 
-        public object updateOrderStatus(int id)
+        public object updateOrderStatus(int id, int status)
         {
-            return _db.UpdateStatus(id);
+            return _db.UpdateStatus(id, status);
         }
     }
 }

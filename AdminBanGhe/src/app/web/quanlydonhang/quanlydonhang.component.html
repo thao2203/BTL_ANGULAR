@@ -32,17 +32,17 @@
                 <td>{{od.createD_DATE| date:'dd-MM-YYYY'}}</td>
                 <td>{{od.phone}}</td>
                 <td>
-                    <select>
-                        <option value="1">Đơn hàng chưa xác thực</option>
-                        <option value="2">Đơn hàng đã xác thực</option>
-                        <option value="3">Đơn hàng đã giao</option>
-                        <option value="4">Đơn hàng đã thanh toán</option>
+                    <select (change)="getValue($any($event.target).value)" >
+                        <option [selected]="this.status == 1" value="1-{{od.ordeR_ID}}">Đơn hàng chưa xác thực</option>
+                        <option [selected]="this.status == 2" value="2-{{od.ordeR_ID}}">Đơn hàng đã xác thực</option>
+                        <option [selected]="this.status == 3" value="3-{{od.ordeR_ID}}">Đơn hàng đã giao</option>
+                        <option [selected]="this.status == 4" value="4-{{od.ordeR_ID}}">Đơn hàng đã thanh toán</option>
                     </select>   
                 </td>
                 <td>
                     <button class="mb-2 mr-2 btn btn-success"><a style="color: white!important; text-decoration: none!important;" href="xemdonhang/{{od.ordeR_ID}}">Xem</a><span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
-                    <button style="color: white;" class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
-                    <button style="color: white;" class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button *ngIf="this.status != 3 && this.status != 4" style="color: white;" class="mb-2 mr-2 btn btn-warning">Sửa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
+                    <button *ngIf="this.status != 3 && this.status != 4" style="color: white;" class="mb-2 mr-2 btn btn-danger">Xóa<span class="badge badge-secondary badge-dot badge-dot-lg"> </span></button>
                 </td>
             </tr>
             

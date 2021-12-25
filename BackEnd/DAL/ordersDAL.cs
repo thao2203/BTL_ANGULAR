@@ -118,10 +118,10 @@ namespace DAL
             return db1.ConvertTo<orders>().FirstOrDefault();
         }
 
-        public object UpdateStatus(int id)
+        public object UpdateStatus(int id, int status)
         {
             string Error = "";
-            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "order_updateStatus", "@ORDER_ID", id);
+            var db1 = _dbHelper.ExecuteSProcedureReturnDataTable(out Error, "order_updateStatus", "@ORDER_ID", id, "@STATUS", status);
             if (!string.IsNullOrEmpty(Error))
                 return Error;
             return db1.ConvertTo<orders>().FirstOrDefault();
